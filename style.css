@@ -50,6 +50,7 @@ body
 {
     height: 3rem;
     margin-right: 15px;
+    margin: 1.5%;
 }
 
 .social-media
@@ -68,6 +69,12 @@ body
 {
     height: 60px;
     margin: 5px;
+}
+
+.projects:hover
+{
+    transform: scale(1.2);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6);
 }
 
 .projects
@@ -121,15 +128,9 @@ body
     background: #fff;
 }
 
-.submit-btn
+.youtube
 {
-    border: 0;
-    outline: none !important;
-    padding: 10px 20px;
-    margin: 2%;
-    background: #ee833c;
-    cursor: pointer;
-    color: #fff;
+    margin: 5%;
 }
 
 .contact img
@@ -182,5 +183,9 @@ body
     span
     {
         display: block;
+    }
+    .contact
+    {
+
     }
 }
