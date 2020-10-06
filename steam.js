@@ -34,8 +34,9 @@ async function getAchiev()
 
 getAchiev();
 
-
-async function getWeather()
+function init()
+{
+    async function getWeather()
     { 
         const response = await fetch(proxyurl + weather_api_url);
         const data = await response.json();
@@ -48,5 +49,10 @@ async function getWeather()
         document.getElementById("temperature").innerHTML = temperature;
         document.getElementById("humidity").innerHTML = humidity;                                 
     }
+    
+    getWeather();
+}
 
-getWeather();
+window.onload = init;
+
+
