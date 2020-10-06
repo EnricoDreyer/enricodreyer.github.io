@@ -1,9 +1,10 @@
 const proxyurl = 'https://cors-anywhere.herokuapp.com/';
-const api_url = 'http://api.steampowered.com/IPlayerService/GetRecentlyPlayedGames/v0001/?key=C39C385409EED377E242D4B58BAD32E1&steamid=76561198261417763&format=json&count=3';                    
-                
+const steam_api_url = 'http://api.steampowered.com/IPlayerService/GetRecentlyPlayedGames/v0001/?key=C39C385409EED377E242D4B58BAD32E1&steamid=76561198261417763&format=json&count=3';                    
+const weather_api_url = 'http://api.openweathermap.org/data/2.5/weather?q=Gauteng,Vanderbijlpark&appid=c3c33bd8270ae6d14f1e19d0c354a2d6&units=metric';
+
 async function getAchiev()
     { 
-        const response = await fetch(proxyurl + api_url);
+        const response = await fetch(proxyurl + steam_api_url);
         const data = await  response.json();
 
         var name1 = data.response.games[0].name;
@@ -32,3 +33,20 @@ async function getAchiev()
     }
 
 getAchiev();
+
+
+async function getWeather()
+    { 
+        const response = await fetch(proxyurl + weather_api_url);
+        const data = await response.json();
+
+        var mainWeather = data.weather[0].main;
+        var temperature = data.main.temp;
+        var humidity = data.main.humidity;                                                          
+
+        document.getElementById("mainWeather").innerHTML = mainWeather;  
+        document.getElementById("temperature").innerHTML = temperature;
+        document.getElementById("humidity").innerHTML = humidity;                                 
+    }
+
+getWeather();

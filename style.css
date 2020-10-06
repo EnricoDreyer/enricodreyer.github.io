@@ -186,6 +186,7 @@ body
     }
     .contact
     {
-
+            align-self: auto;
+            width: 100%
     }
 }
