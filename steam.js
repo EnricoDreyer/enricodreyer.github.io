@@ -45,7 +45,7 @@ function init()
         var temperature = data.main.temp;
         var humidity = data.main.humidity;                                                          
 
-        document.getElementById("mainWeather").innerHTML = mainWeather;  
+        document.getElementById("mainweather").innerHTML = mainWeather;  
         document.getElementById("temperature").innerHTML = temperature;
         document.getElementById("humidity").innerHTML = humidity;                                 
     }
